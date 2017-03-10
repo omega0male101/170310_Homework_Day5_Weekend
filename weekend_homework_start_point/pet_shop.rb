@@ -28,7 +28,7 @@ end
 # end
 
 def stock_count(shop)
-shop[:pets].length 
+  shop[:pets].length 
 end
 
 # ========================================
@@ -78,9 +78,21 @@ end
 def customer_pet_count(customer)
   count = 0
       for pet in customer[:pets]
-        if pet == nil
-          then count << pet
-        end
+        #if pet == nil
+          #count << pet
+          #count << nil
+          #cannot do this as for example
+          #0 << nil explodes
+        #end
+        count += 1
       end
-    return count
+  return count
+
+  #return customer[:pets].length
 end
+
+def add_pet_to_customer(customer, new_pet)
+  customer[:pets] << new_pet
+end
+
+
